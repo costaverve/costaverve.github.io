@@ -1,6 +1,9 @@
 
 
 
+ 
+     
+
  <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,9 +16,9 @@
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #121830, #0f1c3f);
       color: #fff;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
     }
     header {
       background: rgba(0,0,0,0.3);
@@ -26,24 +29,41 @@
       height: 100px;
       max-width: 100%;
     }
+    nav {
+      background: #0f1c3f;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: #fafafa;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
     main {
       flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      text-align: center;
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    h1, h2 {
+      font-weight: bold;
+      color: #fafafa;
     }
     h1 {
       font-size: 3rem;
       margin-bottom: 20px;
-      font-weight: bold;
     }
     p {
       font-size: 1.25rem;
-      max-width: 600px;
-      margin-bottom: 40px;
       line-height: 1.6;
     }
     a.button {
@@ -83,7 +103,8 @@
       width: 100%;
       box-sizing: border-box;
     }
-    input[type="email"] {
+    input[type="email"],
+    input[type="tel"] {
       width: 100%;
       padding: 12px 15px;
       border: none;
@@ -106,27 +127,6 @@
     }
     input[type="submit"]:hover {
       background-color: #e0e0e0;
-    }
-    footer {
-      background: rgba(0,0,0,0.3);
-      text-align: center;
-      padding: 15px 10px;
-      font-size: 0.9rem;
-    }
-    @media(max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      p {
-        font-size: 1rem;
-      }
-      .social-icons {
-        justify-content: center;
-      }
-      .quotes {
-        flex-direction: column;
-        gap: 20px;
-      }
     }
     /* Seção Inspire-se */
     .inspire {
@@ -166,6 +166,64 @@
       font-weight: 600;
       color: #104adf;
     }
+    footer {
+      background: rgba(0,0,0,0.3);
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9rem;
+    }
+    /* Aviso de consentimento */
+    #privacy-consent {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(16,26,63,0.95);
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      z-index: 1000;
+    }
+    #privacy-consent a {
+      color: #ffcb05;
+      text-decoration: underline;
+    }
+    #privacy-consent button {
+      background: #ffcb05;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 15px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #0f1c3f;
+    }
+    /* Responsivo */
+    @media(max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .social-icons {
+        justify-content: center;
+      }
+      .quotes {
+        flex-direction: column;
+        gap: 20px;
+      }
+      #privacy-consent {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 0.85rem;
+      }
+      #privacy-consent button {
+        width: 100%;
+      }
+    }
   </style>
   <link
     rel="stylesheet"
@@ -176,72 +234,149 @@
   <header>
     <img src="logo.png" alt="Costaverve Logo" />
   </header>
+  <nav>
+    <a href="#home" onclick="showSection('home')">Início</a>
+    <a href="#politica" onclick="showSection('politica')">Política de Privacidade</a>
+  </nav>
   <main>
-    <h1>Costaverve – IA no WhatsApp</h1>
-    <p>
-      Atenda seus clientes automaticamente, 24h por dia, com uma IA
-      profissional, rápida e personalizada para o seu negócio local.
-    </p>
-    <a href="#" class="button">Em breve: fale com nossa IA</a>
+    <section id="home" style="display:block;">
+      <h1>Costaverve – IA no WhatsApp</h1>
+      <p>
+        Atenda seus clientes automaticamente, 24h por dia, com uma IA
+        profissional, rápida e personalizada para o seu negócio local.
+      </p>
+      <a href="#" class="button">Em breve: fale com nossa IA</a>
 
-    <div class="social-icons" aria-label="Redes sociais">
-      <a
-        href="https://www.facebook.com/costaverve"
-        target="_blank"
-        rel="noopener"
-        aria-label="Facebook"
-        ><i class="fab fa-facebook"></i
-      ></a>
-      <a
-        href="https://www.instagram.com/costaverve"
-        target="_blank"
-        rel="noopener"
-        aria-label="Instagram"
-        ><i class="fab fa-instagram"></i
-      ></a>
-      <a
-        href="https://www.tiktok.com/@costaverve"
-        target="_blank"
-        rel="noopener"
-        aria-label="TikTok"
-        ><i class="fab fa-tiktok"></i
-      ></a>
-    </div>
+      <div class="social-icons" aria-label="Redes sociais">
+        <a
+          href="https://www.facebook.com/costaverve"
+          target="_blank"
+          rel="noopener"
+          aria-label="Facebook"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/costaverve"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="https://www.tiktok.com/@costaverve"
+          target="_blank"
+          rel="noopener"
+          aria-label="TikTok"
+          ><i class="fab fa-tiktok"></i
+        ></a>
+      </div>
 
-    <form
-      action="https://docs.google.com/forms/d/e/SEU_FORM_ID/formResponse"
-      method="POST"
-      target="_blank"
-      aria-label="Formulário de cadastro de e-mail"
-    >
-      <input
-        type="email"
-        name="emailAddress"
-        placeholder="Digite seu e-mail"
-        required
-        aria-label="Campo para digitar e-mail"
-      />
-      <input type="submit" value="Cadastrar" />
-    </form>
-  </main>
-  <section class="section inspire">
-    <h2>Inspire-se</h2>
-    <div class="quotes">
-      <blockquote>
-        <p>
-          "A inteligência artificial transforma a forma de se conectar com seus
-          clientes."
+      <form
+        action="https://docs.google.com/forms/d/e/SEU_FORM_ID/formResponse"
+        method="POST"
+        target="_blank"
+        aria-label="Formulário de cadastro de e-mail e WhatsApp"
+      >
+        <input
+          type="email"
+          name="emailAddress"
+          placeholder="Digite seu e-mail"
+          required
+          aria-label="Campo para digitar e-mail"
+        />
+        <input
+          type="tel"
+          name="phoneNumber"
+          placeholder="Digite seu WhatsApp"
+          pattern="[0-9]{10,11}"
+          required
+          aria-label="Campo para digitar telefone/WhatsApp"
+        />
+        <p style="font-size: 0.9rem; color: #ccc;">
+          Ao se cadastrar, você concorda com nossa
+          <a
+            href="#politica"
+            style="color: #fafafa; text-decoration: underline;"
+            >Política de Privacidade</a
+          >.
         </p>
-        <footer>– Costaverve</footer>
-      </blockquote>
-      <blockquote>
-        <p>"Automatize, personalize e alcance resultados extraordinários."</p>
-        <footer>– Equipe Costaverve</footer>
-      </blockquote>
-    </div>
-  </section>
+        <input type="submit" value="Cadastrar" />
+      </form>
+
+      <section class="inspire">
+        <h2>Inspire-se</h2>
+        <div class="quotes">
+          <blockquote>
+            <p>
+              "A inteligência artificial transforma a forma de se conectar com
+              seus clientes."
+            </p>
+            <footer>– Costaverve</footer>
+          </blockquote>
+          <blockquote>
+            <p>
+              "Automatize, personalize e alcance resultados extraordinários."
+            </p>
+            <footer>– Equipe Costaverve</footer>
+          </blockquote>
+        </div>
+      </section>
+    </section>
+
+    <section id="politica" style="display:none; color:#0f1c3f; background:#f0f4ff; padding:40px; border-radius:12px;">
+      <h2>Política de Privacidade</h2>
+      <p><strong>Vigência:</strong> Esta política é válida a partir de 04 de agosto de 2025.</p>
+      <p>
+        Na Costaverve, respeitamos sua privacidade e estamos comprometidos em proteger seus dados pessoais.
+      </p>
+      <p>
+        Coletamos apenas seu e-mail e número de WhatsApp para enviar informações sobre nossos serviços, novidades e ofertas.
+      </p>
+      <p>
+        Seus dados são armazenados com segurança e não serão compartilhados com terceiros sem sua autorização.
+      </p>
+      <p>
+        Você pode solicitar a exclusão dos seus dados ou cancelar o recebimento de nossas mensagens a qualquer momento, entrando em contato conosco pelo e-mail: contato.costaverve@gmail.com.
+      </p>
+      <p>
+        Ao se cadastrar, você concorda com esta Política de Privacidade e com o uso dos seus dados conforme descrito.
+      </p>
+    </section>
+  </main>
+
   <footer>
     © 2025 Costaverve. Todos os direitos reservados.
   </footer>
+
+  <!-- Aviso de Consentimento de Privacidade -->
+  <div id="privacy-consent">
+    <div>
+      Nós usamos cookies e coletamos dados para melhorar sua experiência. Ao continuar navegando, você concorda com nossa
+      <a href="#politica" target="_blank" rel="noopener">Política de Privacidade</a>.
+    </div>
+    <button id="accept-consent">OK</button>
+  </div>
+
+  <script>
+    // Menu para mostrar/ocultar seções
+    function showSection(id) {
+      document.querySelectorAll('main section').forEach(sec => {
+        sec.style.display = sec.id === id ? 'block' : 'none';
+      });
+      window.scrollTo(0, 0);
+    }
+
+    // Consentimento de privacidade
+    document.getElementById('accept-consent').addEventListener('click', function() {
+      localStorage.setItem('privacyConsent', 'true');
+      document.getElementById('privacy-consent').style.display = 'none';
+    });
+
+    window.addEventListener('load', function() {
+      if(localStorage.getItem('privacyConsent') === 'true') {
+        document.getElementById('privacy-consent').style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
