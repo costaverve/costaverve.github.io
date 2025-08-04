@@ -25,32 +25,14 @@
     height: 100px;
     max-width: 100%;
   }
-  nav {
-    background: #0f1c3f;
-    padding: 10px 0;
-    width: 100%;
-  }
-  nav a {
-    color: #fafafa;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  nav a:hover {
-    text-decoration: underline;
-  }
   main {
     flex: 1;
     max-width: 960px;
     margin: 40px 20px;
   }
-  h1, h2 {
+  h1 {
     font-weight: bold;
     color: #fafafa;
-  }
-  h1 {
     font-size: 3rem;
     margin-bottom: 20px;
   }
@@ -67,7 +49,7 @@
     font-weight: bold;
     font-size: 1.2rem;
     transition: background-color 0.3s ease;
-    margin-bottom: 40px;
+    margin: 40px 0;
     display: inline-block;
   }
   a.button:hover {
@@ -95,7 +77,7 @@
     max-width: 400px;
     width: 100%;
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 0 auto 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,45 +117,6 @@
     margin: 10px 0 0;
     color: #ccc;
     font-size: 0.9rem;
-    text-align: center;
-  }
-  /* Seção Inspire-se */
-  .inspire {
-    background-color: #f0f4ff;
-    color: #0f1c3f;
-    padding: 60px 20px;
-    max-width: 960px;
-    margin: 40px auto;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgb(16 26 63 / 0.1);
-    text-align: center;
-  }
-  .inspire h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    font-weight: 700;
-  }
-  .quotes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-  }
-  blockquote {
-    background: white;
-    padding: 20px 30px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgb(16 26 63 / 0.1);
-    max-width: 400px;
-    font-style: italic;
-    color: #0f1c3f;
-  }
-  blockquote p {
-    margin: 0 0 10px;
-  }
-  blockquote footer {
-    font-weight: 600;
-    color: #104adf;
   }
   footer {
     background: rgba(0,0,0,0.3);
@@ -220,10 +163,6 @@
     .social-icons {
       justify-content: center;
     }
-    .quotes {
-      flex-direction: column;
-      gap: 20px;
-    }
     #privacy-consent {
       flex-direction: column;
       gap: 10px;
@@ -243,89 +182,46 @@
 <header>
   <img src="logo.png" alt="Costaverve Logo" />
 </header>
-<nav>
-  <a href="#home" onclick="showSection('home')">Início</a>
-</nav>
 <main>
-  <section id="home" style="display:block;">
-    <h1>Costaverve – IA no WhatsApp</h1>
+  <h1>Costaverve – IA no WhatsApp</h1>
+  <p>
+    Atenda seus clientes automaticamente, 24h por dia, com uma IA profissional, rápida e personalizada para o seu negócio local.
+  </p>
+  <a href="#" class="button">Em breve: fale com nossa IA</a>
+
+  <div class="social-icons" aria-label="Redes sociais">
+    <a href="https://www.facebook.com/costaverve" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/costaverve" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@costaverve" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  </div>
+
+  <form
+    action="https://docs.google.com/forms/d/e/SEU_FORM_ID/formResponse"
+    method="POST"
+    target="_blank"
+    aria-label="Formulário de cadastro de e-mail e WhatsApp"
+  >
+    <input
+      type="email"
+      name="emailAddress"
+      placeholder="Digite seu e-mail"
+      required
+      aria-label="Campo para digitar e-mail"
+    />
+    <input
+      type="tel"
+      name="phoneNumber"
+      placeholder="Digite seu WhatsApp"
+      pattern="[0-9]{10,11}"
+      required
+      aria-label="Campo para digitar telefone/WhatsApp"
+    />
     <p>
-      Atenda seus clientes automaticamente, 24h por dia, com uma IA
-      profissional, rápida e personalizada para o seu negócio local.
+      Ao se cadastrar, você concorda com nossa
+      <a href="#" style="color: #fafafa; text-decoration: underline;">Política de Privacidade</a>.
     </p>
-    <a href="#" class="button">Em breve: fale com nossa IA</a>
-
-    <div class="social-icons" aria-label="Redes sociais">
-      <a
-        href="https://www.facebook.com/costaverve"
-        target="_blank"
-        rel="noopener"
-        aria-label="Facebook"
-        ><i class="fab fa-facebook"></i
-      ></a>
-      <a
-        href="https://www.instagram.com/costaverve"
-        target="_blank"
-        rel="noopener"
-        aria-label="Instagram"
-        ><i class="fab fa-instagram"></i
-      ></a>
-      <a
-        href="https://www.tiktok.com/@costaverve"
-        target="_blank"
-        rel="noopener"
-        aria-label="TikTok"
-        ><i class="fab fa-tiktok"></i
-      ></a>
-    </div>
-
-    <form
-      action="https://docs.google.com/forms/d/e/SEU_FORM_ID/formResponse"
-      method="POST"
-      target="_blank"
-      aria-label="Formulário de cadastro de e-mail e WhatsApp"
-    >
-      <input
-        type="email"
-        name="emailAddress"
-        placeholder="Digite seu e-mail"
-        required
-        aria-label="Campo para digitar e-mail"
-      />
-      <input
-        type="tel"
-        name="phoneNumber"
-        placeholder="Digite seu WhatsApp"
-        pattern="[0-9]{10,11}"
-        required
-        aria-label="Campo para digitar telefone/WhatsApp"
-      />
-      <p>
-        Ao se cadastrar, você concorda com nossa
-        <a href="#" style="color: #fafafa; text-decoration: underline;"
-          >Política de Privacidade</a
-        >.
-      </p>
-      <input type="submit" value="Cadastrar" />
-    </form>
-
-    <section class="inspire">
-      <h2>Inspire-se</h2>
-      <div class="quotes">
-        <blockquote>
-          <p>
-            "A inteligência artificial transforma a forma de se conectar com
-            seus clientes."
-          </p>
-          <footer>– Costaverve</footer>
-        </blockquote>
-        <blockquote>
-          <p>"Automatize, personalize e alcance resultados extraordinários."</p>
-          <footer>– Equipe Costaverve</footer>
-        </blockquote>
-      </div>
-    </section>
-  </section>
+    <input type="submit" value="Cadastrar" />
+  </form>
 </main>
 
 <footer>
@@ -343,13 +239,6 @@
 </div>
 
 <script>
-  function showSection(id) {
-    document.querySelectorAll('main section').forEach(sec => {
-      sec.style.display = sec.id === id ? 'block' : 'none';
-    });
-    window.scrollTo(0, 0);
-  }
-
   document.getElementById('accept-consent').addEventListener('click', function() {
     localStorage.setItem('privacyConsent', 'true');
     document.getElementById('privacy-consent').style.display = 'none';
@@ -364,11 +253,12 @@
 </body>
 </html>
 
- 
-  
 
 
 
+
+
+     
 
    
    
