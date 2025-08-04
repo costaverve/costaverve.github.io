@@ -1,164 +1,247 @@
 
 
 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Costaverve | IA no WhatsApp</title>
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #121830, #0f1c3f);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  header {
-    background: rgba(0,0,0,0.3);
-    padding: 20px;
-    text-align: center;
-  }
-  header img {
-    height: 100px;
-    max-width: 100%;
-  }
-  main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    text-align: center;
-  }
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  p {
-    font-size: 1.25rem;
-    max-width: 600px;
-    margin-bottom: 40px;
-    line-height: 1.6;
-  }
-  a.button {
-    background-color: #fafafa;
-    color: #0f1c3f;
-    padding: 15px 40px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
-    margin-bottom: 40px;
-    display: inline-block;
-  }
-  a.button:hover {
-    background-color: #e0e0e0;
-  }
-  .social-icons {
-    display: flex;
-    gap: 25px;
-    margin-bottom: 40px;
-  }
-  .social-icons a {
-    color: white;
-    font-size: 1.8rem;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  .social-icons a:hover {
-    color: #ffcb05;
-  }
-  form {
-    background: rgba(255 255 255 / 0.2);
-    padding: 20px 30px;
-    border-radius: 12px;
-    max-width: 400px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  input[type="email"] {
-    width: 100%;
-    padding: 12px 15px;
-    border: none;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    font-size: 1rem;
-    box-sizing: border-box;
-  }
-  input[type="submit"] {
-    background-color: #fafafa;
-    color: #0f1c3f;
-    padding: 12px 0;
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  input[type="submit"]:hover {
-    background-color: #e0e0e0;
-  }
-  footer {
-    background: rgba(0,0,0,0.3);
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 0.9rem;
-  }
-  @media(max-width: 600px) {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Costaverve | IA no WhatsApp</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #121830, #0f1c3f);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: rgba(0,0,0,0.3);
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      height: 100px;
+      max-width: 100%;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
     h1 {
-      font-size: 2rem;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: bold;
     }
     p {
-      font-size: 1rem;
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+    a.button {
+      background-color: #fafafa;
+      color: #0f1c3f;
+      padding: 15px 40px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease;
+      margin-bottom: 40px;
+      display: inline-block;
+    }
+    a.button:hover {
+      background-color: #e0e0e0;
     }
     .social-icons {
-      justify-content: center;
+      display: flex;
+      gap: 25px;
+      margin-bottom: 40px;
     }
-  }
-</style>
-<!-- Font Awesome para ícones sociais -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
+    .social-icons a {
+      color: white;
+      font-size: 1.8rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #ffcb05;
+    }
+    form {
+      background: rgba(255 255 255 / 0.2);
+      padding: 20px 30px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    input[type="email"] {
+      width: 100%;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #fafafa;
+      color: #0f1c3f;
+      padding: 12px 0;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background-color: #e0e0e0;
+    }
+    footer {
+      background: rgba(0,0,0,0.3);
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9rem;
+    }
+    @media(max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .social-icons {
+        justify-content: center;
+      }
+      .quotes {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    /* Seção Inspire-se */
+    .inspire {
+      background-color: #f0f4ff;
+      color: #0f1c3f;
+      padding: 60px 20px;
+      max-width: 960px;
+      margin: 40px auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgb(16 26 63 / 0.1);
+      text-align: center;
+    }
+    .inspire h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
+    .quotes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+    blockquote {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgb(16 26 63 / 0.1);
+      max-width: 400px;
+      font-style: italic;
+      color: #0f1c3f;
+    }
+    blockquote p {
+      margin: 0 0 10px;
+    }
+    blockquote footer {
+      font-weight: 600;
+      color: #104adf;
+    }
+  </style>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 </head>
 <body>
-<header>
-  <img src="logo.png" alt="Costaverve Logo" />
-</header>
-<main>
-  <h1>Costaverve – IA no WhatsApp</h1>
-  <p>Atenda seus clientes automaticamente, 24h por dia, com uma IA profissional, rápida e personalizada para o seu negócio local.</p>
-  <a href="#" class="button">Em breve: fale com nossa IA</a>
+  <header>
+    <img src="logo.png" alt="Costaverve Logo" />
+  </header>
+  <main>
+    <h1>Costaverve – IA no WhatsApp</h1>
+    <p>
+      Atenda seus clientes automaticamente, 24h por dia, com uma IA
+      profissional, rápida e personalizada para o seu negócio local.
+    </p>
+    <a href="#" class="button">Em breve: fale com nossa IA</a>
 
-  <div class="social-icons" aria-label="Redes sociais">
-    <a href="https://www.facebook.com/costaverve" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.instagram.com/costaverve" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.tiktok.com/@costaverve" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-  </div>
+    <div class="social-icons" aria-label="Redes sociais">
+      <a
+        href="https://www.facebook.com/costaverve"
+        target="_blank"
+        rel="noopener"
+        aria-label="Facebook"
+        ><i class="fab fa-facebook"></i
+      ></a>
+      <a
+        href="https://www.instagram.com/costaverve"
+        target="_blank"
+        rel="noopener"
+        aria-label="Instagram"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a
+        href="https://www.tiktok.com/@costaverve"
+        target="_blank"
+        rel="noopener"
+        aria-label="TikTok"
+        ><i class="fab fa-tiktok"></i
+      ></a>
+    </div>
 
-  <form action="https://docs.google.com/forms/d/e/SEU_FORM_ID/formResponse" method="POST" target="_blank" aria-label="Formulário de cadastro de e-mail">
-    <input
-      type="email"
-      name="emailAddress"
-      placeholder="Digite seu e-mail"
-      required
-      aria-label="Campo para digitar e-mail"
-    />
-    <input type="submit" value="Cadastrar" />
-  </form>
-</main>
-<footer>
-  © 2025 Costaverve. Todos os direitos reservados.
-</footer>
+    <form
+      action="https://docs.google.com/forms/d/e/SEU_FORM_ID/formResponse"
+      method="POST"
+      target="_blank"
+      aria-label="Formulário de cadastro de e-mail"
+    >
+      <input
+        type="email"
+        name="emailAddress"
+        placeholder="Digite seu e-mail"
+        required
+        aria-label="Campo para digitar e-mail"
+      />
+      <input type="submit" value="Cadastrar" />
+    </form>
+  </main>
+  <section class="section inspire">
+    <h2>Inspire-se</h2>
+    <div class="quotes">
+      <blockquote>
+        <p>
+          "A inteligência artificial transforma a forma de se conectar com seus
+          clientes."
+        </p>
+        <footer>– Costaverve</footer>
+      </blockquote>
+      <blockquote>
+        <p>"Automatize, personalize e alcance resultados extraordinários."</p>
+        <footer>– Equipe Costaverve</footer>
+      </blockquote>
+    </div>
+  </section>
+  <footer>
+    © 2025 Costaverve. Todos os direitos reservados.
+  </footer>
 </body>
 </html>
