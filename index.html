@@ -2,8 +2,12 @@
 
 
  
+
+    
      
 
+         
+        
  <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -102,22 +106,30 @@
       max-width: 400px;
       width: 100%;
       box-sizing: border-box;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
     input[type="email"],
     input[type="tel"] {
       width: 100%;
+      max-width: 360px;
       padding: 12px 15px;
       border: none;
       border-radius: 8px;
       margin-bottom: 15px;
       font-size: 1rem;
       box-sizing: border-box;
+      text-align: center;
     }
     input[type="submit"] {
       background-color: #fafafa;
       color: #0f1c3f;
       padding: 12px 0;
       width: 100%;
+      max-width: 360px;
       border: none;
       border-radius: 8px;
       font-weight: 700;
@@ -127,6 +139,14 @@
     }
     input[type="submit"]:hover {
       background-color: #e0e0e0;
+    }
+    form p {
+      width: 100%;
+      max-width: 360px;
+      margin: 10px 0 0;
+      color: #ccc;
+      font-size: 0.9rem;
+      text-align: center;
     }
     /* Seção Inspire-se */
     .inspire {
@@ -200,7 +220,6 @@
       cursor: pointer;
       color: #0f1c3f;
     }
-    /* Responsivo */
     @media(max-width: 600px) {
       h1 {
         font-size: 2rem;
@@ -292,11 +311,9 @@
           required
           aria-label="Campo para digitar telefone/WhatsApp"
         />
-        <p style="font-size: 0.9rem; color: #ccc;">
+        <p>
           Ao se cadastrar, você concorda com nossa
-          <a
-            href="#politica"
-            style="color: #fafafa; text-decoration: underline;"
+          <a href="#politica" style="color: #fafafa; text-decoration: underline;"
             >Política de Privacidade</a
           >.
         </p>
@@ -314,32 +331,45 @@
             <footer>– Costaverve</footer>
           </blockquote>
           <blockquote>
-            <p>
-              "Automatize, personalize e alcance resultados extraordinários."
-            </p>
+            <p>"Automatize, personalize e alcance resultados extraordinários."</p>
             <footer>– Equipe Costaverve</footer>
           </blockquote>
         </div>
       </section>
     </section>
 
-    <section id="politica" style="display:none; color:#0f1c3f; background:#f0f4ff; padding:40px; border-radius:12px;">
+    <section
+      id="politica"
+      style="
+        display: none;
+        color: #0f1c3f;
+        background: #f0f4ff;
+        padding: 40px;
+        border-radius: 12px;
+      "
+    >
       <h2>Política de Privacidade</h2>
       <p><strong>Vigência:</strong> Esta política é válida a partir de 04 de agosto de 2025.</p>
       <p>
-        Na Costaverve, respeitamos sua privacidade e estamos comprometidos em proteger seus dados pessoais.
+        Na Costaverve, respeitamos sua privacidade e estamos comprometidos em
+        proteger seus dados pessoais.
       </p>
       <p>
-        Coletamos apenas seu e-mail e número de WhatsApp para enviar informações sobre nossos serviços, novidades e ofertas.
+        Coletamos apenas seu e-mail e número de WhatsApp para enviar informações
+        sobre nossos serviços, novidades e ofertas.
       </p>
       <p>
-        Seus dados são armazenados com segurança e não serão compartilhados com terceiros sem sua autorização.
+        Seus dados são armazenados com segurança e não serão compartilhados com
+        terceiros sem sua autorização.
       </p>
       <p>
-        Você pode solicitar a exclusão dos seus dados ou cancelar o recebimento de nossas mensagens a qualquer momento, entrando em contato conosco pelo e-mail: contato.costaverve@gmail.com.
+        Você pode solicitar a exclusão dos seus dados ou cancelar o recebimento de
+        nossas mensagens a qualquer momento, entrando em contato conosco pelo
+        e-mail: contato.costaverve@gmail.com.
       </p>
       <p>
-        Ao se cadastrar, você concorda com esta Política de Privacidade e com o uso dos seus dados conforme descrito.
+        Ao se cadastrar, você concorda com esta Política de Privacidade e com o
+        uso dos seus dados conforme descrito.
       </p>
     </section>
   </main>
@@ -358,7 +388,6 @@
   </div>
 
   <script>
-    // Menu para mostrar/ocultar seções
     function showSection(id) {
       document.querySelectorAll('main section').forEach(sec => {
         sec.style.display = sec.id === id ? 'block' : 'none';
@@ -366,7 +395,6 @@
       window.scrollTo(0, 0);
     }
 
-    // Consentimento de privacidade
     document.getElementById('accept-consent').addEventListener('click', function() {
       localStorage.setItem('privacyConsent', 'true');
       document.getElementById('privacy-consent').style.display = 'none';
