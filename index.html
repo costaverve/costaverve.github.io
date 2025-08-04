@@ -1,154 +1,90 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Costaverve | IA no WhatsApp</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 <style>
   body {
     margin: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: #ffffff;
-    color: #111;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #104adf, #0f1c3f);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
   header {
-    background-color: #0f1c3f;
+    background: rgba(0,0,0,0.3);
     padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    text-align: center;
   }
   header img {
-    height: 50px;
+    height: 80px;
+    max-width: 100%;
   }
-  header a {
-    background-color: #104adf;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .hero {
-    text-align: center;
-    padding: 80px 20px;
-    background-color: #f5f8ff;
-  }
-  .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-  }
-  .hero a {
-    background-color: #104adf;
-    color: white;
-    padding: 14px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-  .section {
-    padding: 60px 20px;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-  .section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2rem;
-  }
-  .benefits {
+  main {
+    flex: 1;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
   }
-  .benefit {
-    flex: 1 1 300px;
-    margin: 10px;
-    background-color: #eef1f8;
-    padding: 20px;
-    border-radius: 8px;
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
   }
-  .benefit h3 {
-    margin-top: 0;
+  p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+  a.button {
+    background-color: #ffcb05;
+    color: #0f1c3f;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+  }
+  a.button:hover {
+    background-color: #e6b204;
   }
   footer {
+    background: rgba(0,0,0,0.3);
     text-align: center;
-    padding: 20px;
-    background-color: #0f1c3f;
-    color: white;
+    padding: 15px 10px;
     font-size: 0.9rem;
   }
-  /* Responsividade */
-  @media (max-width: 600px) {
-    .benefits {
-      flex-direction: column;
-      align-items: center;
+  @media(max-width: 600px) {
+    h1 {
+      font-size: 2rem;
     }
-    .benefit {
-      width: 90%;
-      margin: 10px 0;
+    p {
+      font-size: 1rem;
     }
   }
 </style>
 </head>
 <body>
-
 <header>
   <img src="logo.png" alt="Costaverve Logo" />
-  <a href="#">Em breve no WhatsApp</a>
 </header>
-
-<section class="hero">
-  <h1>Costaverve – Inteligência Artificial no WhatsApp</h1>
+<main>
+  <h1>Costaverve – IA no WhatsApp</h1>
   <p>Atenda seus clientes automaticamente, 24h por dia, com uma IA profissional, rápida e personalizada para o seu negócio local.</p>
-  <a href="#">Em breve você poderá conversar com a IA</a>
-</section>
-
-<section class="section">
-  <h2>O que a Costaverve faz por você</h2>
-  <div class="benefits">
-    <div class="benefit">
-      <h3>Atendimento 24h</h3>
-      <p>Receba e responda clientes mesmo fora do horário comercial. Nunca perca uma venda.</p>
-    </div>
-    <div class="benefit">
-      <h3>IA com linguagem natural</h3>
-      <p>A Costaverve entende o cliente e responde com clareza, como se fosse um atendente real.</p>
-    </div>
-    <div class="benefit">
-      <h3>Mais agendamentos e vendas</h3>
-      <p>Converta mais com respostas instantâneas, organizadas e personalizadas.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Como funciona</h2>
-  <div class="benefits">
-    <div class="benefit">
-      <h3>1. Cliente envia mensagem</h3>
-      <p>O cliente chama sua empresa no WhatsApp a qualquer hora.</p>
-    </div>
-    <div class="benefit">
-      <h3>2. A IA responde</h3>
-      <p>A Costaverve entende a dúvida e responde em segundos.</p>
-    </div>
-    <div class="benefit">
-      <h3>3. Você recebe o lead</h3>
-      <p>O cliente já vem pré-atendido e pronto para comprar ou agendar.</p>
-    </div>
-  </div>
-</section>
-
+  <a href="#" class="button">Em breve: fale com nossa IA</a>
+</main>
 <footer>
   © 2025 Costaverve. Todos os direitos reservados.
 </footer>
-
 </body>
 </html>
