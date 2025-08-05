@@ -2,119 +2,98 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Costaverve | IA no WhatsApp</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #121820;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0B0E13;
       color: #EDEDED;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
     }
-    header {
-      padding: 30px 20px 0;
-      width: 100%;
-    }
+
     header img {
-      height: 120px;
-      max-width: 100%;
+      margin-top: 40px;
+      height: 100px;
     }
+
     main {
-      flex: 1;
-      max-width: 960px;
-      margin: 40px 20px;
+      max-width: 600px;
+      padding: 20px;
     }
+
     h1 {
-      font-weight: bold;
+      font-size: 2rem;
       color: #00C48C;
-      font-size: 2.8rem;
-      margin-bottom: 20px;
+      margin-top: 30px;
     }
-    .benefits {
-      margin: 40px auto;
-      max-width: 700px;
+
+    p.subtitle {
+      font-size: 1.1rem;
+      color: #cccccc;
+      margin-bottom: 30px;
     }
-    .benefits p {
-      font-size: 1.25rem;
-      margin: 20px 0;
-      line-height: 1.6;
-      color: #EDEDED;
+
+    ul.benefits {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+      text-align: left;
     }
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin: 40px 0;
-    }
-    .social-icons a {
-      color: #EDEDED;
-      font-size: 1.8rem;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .social-icons a:hover {
-      color: #00C48C;
-    }
-    form {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px 30px;
-      border-radius: 12px;
-      max-width: 400px;
-      width: 100%;
-      box-sizing: border-box;
-      margin: 0 auto 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    input[type="email"],
-    input[type="tel"] {
-      width: 100%;
-      padding: 12px 15px;
-      border: none;
-      border-radius: 8px;
+
+    ul.benefits li {
       margin-bottom: 15px;
       font-size: 1rem;
-      box-sizing: border-box;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    ul.benefits li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #00C48C;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    input[type="email"],
+    input[type="tel"] {
+      width: 90%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
       text-align: center;
     }
+
     input[type="submit"] {
       background-color: #00C48C;
-      color: #121820;
-      padding: 12px 0;
-      width: 100%;
+      color: #0B0E13;
       border: none;
-      border-radius: 8px;
-      font-weight: 700;
+      padding: 12px 30px;
+      border-radius: 6px;
       font-size: 1.1rem;
+      font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
-    input[type="submit"]:hover {
-      background-color: #00b07d;
-    }
-    .policy-note {
-      color: #B0B0B0;
-      font-size: 0.9rem;
-      margin-top: 10px;
-    }
+
     footer {
-      background: #121820;
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9rem;
-      width: 100%;
-      border-top: 1px solid #1f1f1f;
-    }
-    footer a {
-      color: #00C48C;
-      text-decoration: underline;
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: #888;
     }
 
     #privacy-consent {
@@ -123,7 +102,7 @@
       left: 0;
       right: 0;
       background: rgba(0, 0, 0, 0.9);
-      color: #fff;
+      color: white;
       padding: 15px 20px;
       display: flex;
       justify-content: space-between;
@@ -131,10 +110,7 @@
       font-size: 0.9rem;
       z-index: 1000;
     }
-    #privacy-consent a {
-      color: #00C48C;
-      text-decoration: underline;
-    }
+
     #privacy-consent button {
       background: #00C48C;
       border: none;
@@ -142,97 +118,81 @@
       padding: 8px 15px;
       font-weight: bold;
       cursor: pointer;
-      color: #121820;
+      color: #0B0E13;
     }
 
-    @media(max-width: 600px) {
-      h1 {
-        font-size: 2rem;
+    @media (max-width: 600px) {
+      main {
+        padding: 10px;
       }
-      .benefits p {
-        font-size: 1rem;
+
+      ul.benefits {
+        text-align: center;
       }
+
+      input[type="submit"] {
+        width: 100%;
+      }
+
       #privacy-consent {
         flex-direction: column;
         gap: 10px;
-        font-size: 0.85rem;
-      }
-      #privacy-consent button {
-        width: 100%;
       }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
   <header>
-    <img src="logo fundo transparente costaverve.png" alt="Costaverve Logo" />
+    <img src="logo fundo transparente costaverve.png" alt="Logo Costaverve"/>
   </header>
+
   <main>
-    <h1>Costaverve: IA no WhatsApp</h1>
+    <h1>Atenda seus clientes com IA real no WhatsApp</h1>
+    <p class="subtitle">Automatize seu atendimento 24h por dia com tecnologia que entende e responde como uma pessoa.</p>
 
-    <div class="benefits">
-      <p><strong>Atendimento com Inteligência Artificial real:</strong> responda seus clientes 24h por dia com uma IA que entende, conversa e resolve como uma pessoa de verdade.</p>
-      <p><strong>Tudo via WhatsApp, sem complicação:</strong> seus clientes continuam usando o WhatsApp, você ganha tempo e vende mais.</p>
-      <p><strong>Respostas rápidas e personalizadas:</strong> linguagem clara e adaptada ao seu tipo de negócio.</p>
-      <p><strong>Ideal para empresas que querem economizar tempo, dinheiro e energia:</strong> atendimento eficiente sem depender de grandes equipes.</p>
-      <p><strong>Tecnologia de ponta, sem precisar entender de tecnologia:</strong> a Costaverve cuida de tudo pra você.</p>
-    </div>
+    <ul class="benefits">
+      <li>Atendimento automático 24h por dia</li>
+      <li>Respostas personalizadas para seus clientes</li>
+      <li>Redução de custos com equipe</li>
+      <li>Fácil de ativar, sem complicações técnicas</li>
+    </ul>
 
-    <div class="social-icons">
-      <a href="https://www.facebook.com/costaverve" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/costaverve" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@costaverve" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-    </div>
-
-    <form action="https://docs.google.com/forms/d/e/SEU_FORM_ID/formResponse" method="POST" target="_blank">
-      <input type="email" name="emailAddress" placeholder="Digite seu e-mail" required />
-      <input type="tel" name="phoneNumber" placeholder="Digite seu WhatsApp" pattern="[0-9]{10,11}" required />
-      <p class="policy-note">Ao se cadastrar, você concorda com nossa <a href="#">Política de Privacidade</a>.</p>
-      <input type="submit" value="Cadastrar" />
+    <form method="POST" action="#">
+      <input type="email" name="email" placeholder="Digite seu e-mail" required />
+      <input type="tel" name="whatsapp" placeholder="Digite seu WhatsApp" required />
+      <input type="submit" value="Quero conhecer agora" />
     </form>
   </main>
 
   <footer>
-    <a href="#">Política de Privacidade</a><br />
-    © 2025 Costaverve. Todos os direitos reservados.
+    <p>© 2025 Costaverve. Todos os direitos reservados. | <a href="#" style="color: #00C48C;">Política de Privacidade</a></p>
   </footer>
 
   <div id="privacy-consent">
     <div>
-      Nós usamos cookies e coletamos dados para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="#" target="_blank">Política de Privacidade</a>.
+      Usamos cookies e coletamos dados para melhorar sua experiência. Ao continuar, você aceita nossa
+      <a href="#" style="color:#00C48C;">Política de Privacidade</a>.
     </div>
-    <button id="accept-consent">OK</button>
+    <button onclick="acceptConsent()">OK</button>
   </div>
 
   <script>
-    document.getElementById('accept-consent').addEventListener('click', function() {
+    function acceptConsent() {
       localStorage.setItem('privacyConsent', 'true');
       document.getElementById('privacy-consent').style.display = 'none';
-    });
+    }
 
-    window.addEventListener('load', function() {
-      if (localStorage.getItem('privacyConsent') === 'true') {
+    window.onload = function() {
+      if(localStorage.getItem('privacyConsent') === 'true') {
         document.getElementById('privacy-consent').style.display = 'none';
       }
-    });
+    }
   </script>
 </body>
 </html>
 
- 
- 
 
- 
-
-
-   
-   
-
-   
-  
-
- 
+    
 
   
   
