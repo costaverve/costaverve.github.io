@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Costaverve | IA no WhatsApp</title>
   <style>
     body {
@@ -10,54 +10,62 @@
       font-family: Arial, sans-serif;
       background: #0B0E13;
       color: #00C48C;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 100vh;
       text-align: center;
     }
+
     header {
-      width: 100%;
-      padding: 30px 0 0;
+      padding: 30px 0 10px;
     }
+
     header img {
-      max-width: 280px;
+      max-width: 220px;
       height: auto;
       display: block;
-      margin: 40px auto 0;
+      margin: 0 auto;
     }
+
     main {
-      flex: 1;
-      max-width: 960px;
-      padding: 40px 20px;
+      max-width: 800px;
+      padding: 20px;
     }
+
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin-bottom: 20px;
-      color: #00C48C;
+      line-height: 1.3;
     }
+
     p.subtitle {
       font-size: 1.2rem;
-      color: #e0e0e0;
+      color: #eeeeee;
       margin-bottom: 30px;
+      line-height: 1.5;
     }
+
     ul.benefits {
       list-style: none;
       padding: 0;
-      margin: 20px 0 40px;
+      margin-bottom: 40px;
     }
+
     ul.benefits li {
-      margin-bottom: 12px;
       font-size: 1.1rem;
+      margin-bottom: 12px;
       color: #00C48C;
     }
+
     form {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255,255,255,0.05);
       padding: 30px 20px;
       border-radius: 12px;
       max-width: 400px;
       margin: 0 auto;
     }
+
     form input[type="email"],
     form input[type="tel"] {
       width: 100%;
@@ -66,9 +74,10 @@
       border: none;
       border-radius: 8px;
       font-size: 1rem;
-      box-sizing: border-box;
       text-align: center;
+      box-sizing: border-box;
     }
+
     form input[type="submit"] {
       background-color: #00C48C;
       color: #0B0E13;
@@ -80,17 +89,20 @@
       font-size: 1.1rem;
       width: 100%;
     }
+
     .privacy-link {
       color: #aaa;
       font-size: 0.85rem;
       margin-top: 10px;
     }
+
     footer {
       text-align: center;
       font-size: 0.85rem;
       padding: 30px 10px 15px;
       color: #aaa;
     }
+
     #privacy-consent {
       position: fixed;
       bottom: 0;
@@ -105,6 +117,7 @@
       font-size: 0.9rem;
       z-index: 1000;
     }
+
     #privacy-consent button {
       background: #00C48C;
       border: none;
@@ -114,12 +127,28 @@
       cursor: pointer;
       color: #0B0E13;
     }
+
     @media(max-width: 600px) {
       h1 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
       }
+
+      p.subtitle {
+        font-size: 1rem;
+      }
+
       ul.benefits li {
         font-size: 1rem;
+      }
+
+      #privacy-consent {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      #privacy-consent button {
+        width: 100%;
       }
     }
   </style>
@@ -131,14 +160,14 @@
 </header>
 
 <main>
-  <h1>Automatize seu WhatsApp com atendimento inteligente da IA da Costaverve</h1>
+  <h1>Automatize seu WhatsApp com atendimento inteligente com a IA da Costaverve</h1>
   <p class="subtitle">Capte clientes automaticamente com inteligência artificial que responde por você 24h por dia.</p>
 
   <ul class="benefits">
-    <li>✔️ Atendimento automático no WhatsApp 24h por dia</li>
-    <li>✔️ Respostas inteligentes e personalizadas</li>
-    <li>✔️ Captação de leads com e-mail e WhatsApp</li>
-    <li>✔️ Economia com equipe de atendimento</li>
+    <li>✅ Atendimento automático no WhatsApp 24h por dia</li>
+    <li>✅ Respostas inteligentes e personalizadas</li>
+    <li>✅ Captação de leads com e-mail e WhatsApp</li>
+    <li>✅ Economia com equipe de atendimento</li>
   </ul>
 
   <form action="#" method="POST">
@@ -178,8 +207,10 @@
 </body>
 </html>
 
+  
  
-   
+  
+  
 
 
   
