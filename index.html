@@ -8,8 +8,8 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #0B0E13;
-      color: #fff;
+      background-color: #121820;
+      color: #EDEDED;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -43,6 +43,7 @@
       font-size: 1.25rem;
       margin: 20px 0;
       line-height: 1.6;
+      color: #EDEDED;
     }
     .social-icons {
       display: flex;
@@ -51,7 +52,7 @@
       margin: 40px 0;
     }
     .social-icons a {
-      color: white;
+      color: #EDEDED;
       font-size: 1.8rem;
       text-decoration: none;
       transition: color 0.3s ease;
@@ -60,7 +61,7 @@
       color: #00C48C;
     }
     form {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
       padding: 20px 30px;
       border-radius: 12px;
       max-width: 400px;
@@ -85,7 +86,7 @@
     }
     input[type="submit"] {
       background-color: #00C48C;
-      color: #0B0E13;
+      color: #121820;
       padding: 12px 0;
       width: 100%;
       border: none;
@@ -99,23 +100,12 @@
       background-color: #00b07d;
     }
     .policy-note {
-      color: #ccc;
+      color: #B0B0B0;
       font-size: 0.9rem;
       margin-top: 10px;
     }
-    .privacy-message {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 20px;
-      margin-bottom: 30px;
-      font-size: 1rem;
-      color: #ccc;
-      border-radius: 8px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
     footer {
-      background: #0B0E13;
+      background: #121820;
       text-align: center;
       padding: 20px 10px;
       font-size: 0.9rem;
@@ -126,19 +116,60 @@
       color: #00C48C;
       text-decoration: underline;
     }
+
+    #privacy-consent {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.9);
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      z-index: 1000;
+    }
+    #privacy-consent a {
+      color: #00C48C;
+      text-decoration: underline;
+    }
+    #privacy-consent button {
+      background: #00C48C;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 15px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #121820;
+    }
+
+    @media(max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .benefits p {
+        font-size: 1rem;
+      }
+      #privacy-consent {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 0.85rem;
+      }
+      #privacy-consent button {
+        width: 100%;
+      }
+    }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
   <header>
-    <img src="logo sem fundo.jpg" alt="Costaverve Logo" />
+    <img src="logo fundo transparente costaverve.png" alt="Costaverve Logo" />
   </header>
   <main>
     <h1>Costaverve: IA no WhatsApp</h1>
-
-    <div class="privacy-message">
-      Este site coleta informações como e-mail e WhatsApp para entrar em contato com você e apresentar nossa solução. Ao continuar, você concorda com nossa Política de Privacidade.
-    </div>
 
     <div class="benefits">
       <p><strong>Atendimento com Inteligência Artificial real:</strong> responda seus clientes 24h por dia com uma IA que entende, conversa e resolve como uma pessoa de verdade.</p>
@@ -161,14 +192,37 @@
       <input type="submit" value="Cadastrar" />
     </form>
   </main>
+
   <footer>
     <a href="#">Política de Privacidade</a><br />
     © 2025 Costaverve. Todos os direitos reservados.
   </footer>
+
+  <div id="privacy-consent">
+    <div>
+      Nós usamos cookies e coletamos dados para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="#" target="_blank">Política de Privacidade</a>.
+    </div>
+    <button id="accept-consent">OK</button>
+  </div>
+
+  <script>
+    document.getElementById('accept-consent').addEventListener('click', function() {
+      localStorage.setItem('privacyConsent', 'true');
+      document.getElementById('privacy-consent').style.display = 'none';
+    });
+
+    window.addEventListener('load', function() {
+      if (localStorage.getItem('privacyConsent') === 'true') {
+        document.getElementById('privacy-consent').style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
 
-   
+ 
+ 
+
  
 
 
